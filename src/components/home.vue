@@ -1,4 +1,8 @@
 <script setup>
+
+
+import { useRoute, useRouter } from 'vue-router';
+
 const nav = document.getElementById('bottomNav');
 
   window.addEventListener('scroll', () => {
@@ -17,7 +21,17 @@ const nav = document.getElementById('bottomNav');
       nav.classList.remove('static', 'mt-4', 'z-0');
       nav.classList.add('fixed', 'bottom-0', 'z-50');
     }
-  });</script>
+  });
+  
+  
+  
+  const router = useRouter();
+  
+  const gotoprofile = () =>{
+    router.push('/profile')
+  }
+  
+  </script>
 
 <template>
  <div class="h-full w-full flex flex-col items-center justify-between bg-[#242424] relative ">
@@ -163,10 +177,10 @@ const nav = document.getElementById('bottomNav');
 
     <!-- نوار ناوبری -->
     <div id="bottomNav" class="w-11/12 max-w-md h-16 grid grid-cols-4 gap-4 bg-[#1E1E1E] px-4 py-1 rounded-3xl text-white mb-2 shrink-0 fixed bottom-0 transition-transform duration-300 z-50">
-      <div class="flex items-center justify-center"><img src="../assets/img/image 3.png" class="w-8 h-8" alt=""></div>
-      <div class="flex items-center justify-center"><img src="../assets/img/image 7.png" class="w-8 h-8" alt=""></div>
+      <div @click="gotoprofile" class="flex items-center justify-center"><img src="../assets/img/image 5.png" class="w-8 h-8" alt=""></div>
       <div class="flex items-center justify-center"><img src="../assets/img/image 11.png" class="w-8 h-8" alt=""></div>
-      <div class="flex items-center justify-center"><img src="../assets/img/image.png" class="w-8 h-8" alt=""></div>
+      <div class="flex items-center justify-center"><img src="../assets/img/image 7.png" class="w-8 h-8" alt=""></div>
+      <div class="flex items-center justify-center"><img src="../assets/img/image home.png" class="w-8 h-8" alt=""></div>
     </div>
 
 
