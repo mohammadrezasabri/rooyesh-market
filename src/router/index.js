@@ -2,10 +2,14 @@ import { createMemoryHistory, createRouter } from 'vue-router'
 
 import loading from '../page/loading.vue'
 import index  from '../page/index.vue'
+import login  from '../page/login.vue'
+import home from '../components/home.vue'
 
 const routes = [
   { path: '/', component: loading },
-  { path: '/index', component: index}
+  { path: '/index', component: index},
+  { path: '/login', component: login},
+  { path: '/home', component: home},
   //{ path: '/about', component: AboutView },
 ]
 

@@ -1,4 +1,15 @@
-<script></script>
+<script setup>
+
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+const gotologin = () =>{
+  router.push('/login')
+}
+
+</script>
+
 
 
 <template>
@@ -26,7 +37,7 @@
 
     <!-- دکمه -->
     <div class="absolute bottom-14 w-96 text-[#FF6600] text-4xl">
-      <button class="w-full py-3 bg-[#22FF00]/10 font-bold rounded-xl">
+      <button @click="gotologin" class="w-full py-3 bg-[#22FF00]/10 font-bold rounded-xl">
         <span class="align-super opacity-60">بـــزن بــریـم</span>
       </button>
     </div>

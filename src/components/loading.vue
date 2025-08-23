@@ -1,20 +1,29 @@
 <script setup>
 import { onMounted } from 'vue';
 import { useRouter } from 'vue-router';
+import Cookies from "js-cookie";
 
 const router = useRouter()
 
 onMounted(() => {
-    setTimeout(() =>{
-        router.push('/index')
-    }, 5000)
-})
+  setTimeout(() => {
+    const cookies = Cookies.get("rooyesh-market");
+    if (cookies === undefined) {
+      // یعنی کوکی وجود نداره = کاربر لاگین نکرده
+      router.push("/index");
+    } else {
+      // یعنی کاربر قبلا لاگین کرده
+      router.push("/home");
+    }
+  }, 5000); // بعد ۵ ثانیه
+});
 
 defineProps({
-msg:String,
-texthome:String
-})
+  msg: String,
+  texthome: String
+});
 </script>
+
 
 
 <template>
