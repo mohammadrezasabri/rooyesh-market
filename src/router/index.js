@@ -1,22 +1,21 @@
-import { createMemoryHistory, createRouter } from 'vue-router'
+import { createWebHistory, createRouter } from 'vue-router'
 
-import loading from '../page/loading.vue'
-import index  from '../page/index.vue'
 import login  from '../page/login.vue'
-import home from '../components/home.vue'
-import profile from '../components/profile.vue'
+import home from '../page/home.vue'
+import profile from '../page/profile.vue'
+import index from '../components/index.vue'
+
 
 const routes = [
-  { path: '/', component: loading },
-  { path: '/index', component: index},
+  { path: '/', redirect: '/login'},
   { path: '/login', component: login},
   { path: '/home', component: home},
+  { path: '/index', component: index},
   { path: '/profile', component: profile},
-  //{ path: '/about', component: AboutView },
 ]
 
 const router = createRouter({
-  history: createMemoryHistory(),
+  history: createWebHistory(),
   routes,
 })
 

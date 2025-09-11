@@ -1,35 +1,24 @@
-<script setup>
-import { onMounted } from 'vue';
-import { useRouter } from 'vue-router';
-import Cookies from "js-cookie";
+<template>
+  <!-- دیگه چیزی نشون نمی‌ده -->
+  <div style="display: none;"></div>
+</template>
 
-const router = useRouter()
+<script setup>
+import { onMounted } from "vue";
+import Cookies from "js-cookie";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 
 onMounted(() => {
-  setTimeout(() => {
-    const cookies = Cookies.get("rooyesh-market");
-    if (cookies === undefined) {
-      // یعنی کوکی وجود نداره = کاربر لاگین نکرده
-      router.push("/index");
-    } else {
-      // یعنی کاربر قبلا لاگین کرده
-      router.push("/home");
-    }
-  }, 5000); // بعد ۵ ثانیه
-});
+  const cookieValue = Cookies.get("rooyesh-market");
 
-defineProps({
-  msg: String,
-  texthome: String
+  if (cookieValue) {
+    // قبلا لاگین کرده → بفرست به home
+    router.push("/home");
+  } else {
+    // کوکی وجود نداره → بفرست به login
+    router.push("/login");
+  }
 });
 </script>
-
-
-
-<template>
-    <div class="text-center ">
-            <div class="text-4xl font-bold bg-linear-to-l from-amber-600 via-lime-800 to-green-700 text-transparent bg-clip-text opacity-50">{{ texthome }} </div>
-            <div class="text-white text-2xl tracking-[0.10em] mt-2 text-center opacity-45">{{msg}}</div>       
-            <div class="absolute top-80 -left-32  w-96 h-96 bg-[#22FF00] rounded-b-full  rounded-r-full blur-3xl  opacity-15"></div>     
-        </div>
-</template>
