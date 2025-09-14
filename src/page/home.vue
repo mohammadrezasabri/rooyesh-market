@@ -15,7 +15,7 @@ import {ref} from 'vue'
 
     <!-- پس‌زمینه‌های رنگی -->
     <div
-      class="absolute top-0 left-8 sm:left-16 md:left-24 lg:left-36 w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 bg-[#FF6600] rounded-b-full rounded-l-full blur-2xl sm:blur-3xl opacity-35 pointer-events-none">
+      class="absolute top-0 right-5 sm:left-16 md:left-24 lg:left-36 w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 bg-[#FF6600] rounded-b-full rounded-l-full blur-2xl sm:blur-3xl opacity-35 pointer-events-none">
     </div>
     <div
       class="absolute top-40 sm:top-48 md:top-56 lg:top-60 -left-16 sm:-left-24 md:-left-28 lg:-left-32 w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 bg-[#22FF00] rounded-b-full rounded-r-full blur-2xl sm:blur-3xl opacity-15 pointer-events-none">
@@ -75,29 +75,29 @@ import {ref} from 'vue'
       </div>
     </div>
 
-    <div class="mt-12 grid grid-cols-4 gap-4">
-      <div class="w-20 h-24 bg-[#242424]/55 rounded-xl flex flex-col items-center justify-center text-white text-sm">
+    <div class="mt-12 grid grid-cols-4 gap-3">
+      <div class="w-18 h-20 bg-[#242424]/55 rounded-xl flex flex-col items-center justify-center text-white text-sm">
         <img src="../assets/img/rb_12580.png" alt="">دسر
       </div>
-      <div class="w-20 h-24 bg-[#242424]/55 rounded-xl flex flex-col items-center justify-center text-white text-sm">
+      <div class="w-18 h-20 bg-[#242424]/55 rounded-xl flex flex-col items-center justify-center text-white text-sm">
         <img src="../assets/img/rb_2150731924.png" alt="">کیک
       </div>
-      <div class="w-20 h-24 bg-[#242424]/55 rounded-xl flex flex-col items-center justify-center text-white text-sm">
+      <div class="w-18 h-20 bg-[#242424]/55 rounded-xl flex flex-col items-center justify-center text-white text-sm">
         <img src="../assets/img/rb_2151261349.png" alt="">میان‌وعده
       </div>
-      <div class="w-20 h-24 bg-[#242424]/55 rounded-xl flex flex-col items-center justify-center text-white text-sm">
+      <div class="w-18 h-20 bg-[#242424]/55 rounded-xl flex flex-col items-center justify-center text-white text-sm">
         <img src="../assets/img/rb_11570.png" alt=""> چیپس
       </div>
-      <div class="w-20 h-24 bg-[#242424]/55 rounded-xl flex flex-col items-center justify-center text-white text-sm">
+      <div class="w-18 h-20 bg-[#242424]/55 rounded-xl flex flex-col items-center justify-center text-white text-sm">
         <img src="../assets/img/rb_12580.png" alt="">دسر
       </div>
-      <div class="w-20 h-24 bg-[#242424]/55 rounded-xl flex flex-col items-center justify-center text-white text-sm">
+      <div class="w-18 h-20 bg-[#242424]/55 rounded-xl flex flex-col items-center justify-center text-white text-sm">
         <img src="../assets/img/rb_2149108540.png" alt="">کافه
       </div>
-      <div class="w-20 h-24 bg-[#242424]/55 rounded-xl flex flex-col items-center justify-center text-white text-sm">
+      <div class="w-18 h-20 bg-[#242424]/55 rounded-xl flex flex-col items-center justify-center text-white text-sm">
         <img src="../assets/img/rb_12580.png" alt="">بستنی
       </div>
-      <div class="w-20 h-24 bg-[#242424]/55 rounded-xl flex flex-col items-center justify-center text-white text-sm">
+      <div class="w-18 h-20 bg-[#242424]/55 rounded-xl flex flex-col items-center justify-center text-white text-sm">
         <img src="../assets/img/rb_2149108540.png" alt=""> کافه
       </div>
     </div>
