@@ -4,7 +4,7 @@
 <template>
  
 <Loading/> 
-  <main class="bg-[#242424] min-h-screen">
+  <main class="bg-[#242424] min-h-screen ">
     <RouterView />
   </main>
 </template>

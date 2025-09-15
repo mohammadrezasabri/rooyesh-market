@@ -11,7 +11,7 @@ import {ref} from 'vue'
 <template>
 
   
- <div class="min-h-screen w-full flex flex-col items-center justify-between bg-[#242424] relative pb-20">
+ <div class="min-h-screen w-full flex flex-col items-center justify-between bg-[#242424] relative ">
 
     <!-- پس‌زمینه‌های رنگی -->
     <div
@@ -45,7 +45,7 @@ import {ref} from 'vue'
 
     <!-- نوار جستجو -->
     <!-- کادر جستجو زیر هدر -->
-    <div class="w-11/12 max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl mt-4 sm:mt-6 relative">
+    <div class="w-11/12 max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl mt-4 sm:mt-6 relative -top-4">
       <!-- 🔍 آیکن ذره‌بین -->
       <span class="absolute inset-y-0 right-3 sm:right-4 flex items-center pointer-events-none">
         <svg class="w-4 h-4 sm:w-5 sm:h-5 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
@@ -59,12 +59,12 @@ import {ref} from 'vue'
       <input type="text" placeholder="...محصول مورد نظر را جستجو کنید"
         class="w-full bg-[#1E1E1E] text-white text-sm sm:text-base px-8 sm:px-10 py-2 sm:py-3 border border-gray-600 rounded-full h-10 sm:h-12 placeholder-gray-400 outline-none">
     </div>
-    <div class="w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl flex items-center justify-center pt-3 sm:pt-4">
-      <img src="../assets/img/Untitled 1.png" alt="Hero banner" class="w-full h-auto max-h-32 sm:max-h-40 md:max-h-48 object-contain">
+    <div class="w-full relative -top-6 sm:-top-3 lg:-top-2">
+      <img src="../assets/img/Untitled 1.png" alt="Hero banner" class="w-full h-auto max-h-32 sm:max-h-40 md:max-h-48 object-contain ">
     </div>
 
     <!-- دسته‌ها و مشاهده همه -->
-    <div class="w-11/12 max-w-md flex flex-row-reverse items-center justify-between mt-4 px-2">
+    <div class="w-11/12 max-w-md flex flex-row-reverse items-center justify-between relative -top-10 sm:-top-3 lg:-top-2">
       <!-- دسته‌ها (راست) -->
       <div class="text-orange-500 font-bold text-lg">دسته ها</div>
 
@@ -75,7 +75,7 @@ import {ref} from 'vue'
       </div>
     </div>
 
-    <div class="mt-12 grid grid-cols-4 gap-3">
+    <div class="relative -top-12 grid grid-cols-4 gap-3">
       <div class="w-18 h-20 bg-[#242424]/55 rounded-xl flex flex-col items-center justify-center text-white text-sm">
         <img src="../assets/img/rb_12580.png" alt="">دسر
       </div>
@@ -102,7 +102,7 @@ import {ref} from 'vue'
       </div>
     </div>
 
-    <div class="w-11/12 max-w-md flex flex-row-reverse items-center justify-between mt-4 px-2">
+    <div class="w-11/12 max-w-md flex flex-row-reverse items-center justify-between relative -top-13">
       <!-- دسته‌ها (راست) -->
       <div class="text-orange-500 font-bold text-lg">محصولات پیشنهادی</div>
 
@@ -113,7 +113,7 @@ import {ref} from 'vue'
       </div>
     </div>
 
-    <div class="w-full mt-4 px-4">
+    <div class="w-full px-4 relative -top-18">
   <div class="flex items-start gap-4 overflow-x-auto">
 
     <!-- تیتر -->
@@ -123,7 +123,7 @@ import {ref} from 'vue'
     </div>
 
     <!-- لیست محصولات اسکرول‌پذیر -->
-    <div class="flex gap-3 overflow-x-auto scrollbar-none -mx-2 pr-2 pb-2" style="-webkit-overflow-scrolling: touch; direction: rtl;">
+    <div class="flex gap-3  scrollbar-none -mx-2 pr-2 " style="-webkit-overflow-scrolling: touch; direction: rtl;">
 
       <!-- آیتم محصول 1 -->
       <div class="w-28 min-w-[7rem] bg-[#1E1E1E] p-2 rounded-xl flex-shrink-0">
