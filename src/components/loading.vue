@@ -10,15 +10,15 @@ import { useRouter } from "vue-router";
 
 const router = useRouter();
 
-onMounted(() => {
-  const cookieValue = Cookies.get("rooyesh-market");
+// onMounted(() => {
+//   const cookieValue = Cookies.get("rooyesh-market");
 
-  if (cookieValue) {
-    // قبلا لاگین کرده → بفرست به home
-    router.push("/home");
-  } else {
-    // کوکی وجود نداره → بفرست به login
-    router.push("/login");
-  }
-});
+//   if (cookieValue) {
+//     // قبلا لاگین کرده → بفرست به home
+//     router.push("/home");
+//   } else {
+//     // کوکی وجود نداره → بفرست به login
+//     router.push("/login");
+//   }
+// });
 </script>

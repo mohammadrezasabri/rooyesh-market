@@ -37,21 +37,21 @@ router.push('/home')
   
       <!-- محتوای صفحه -->
       <div class="text-center -mt-60 z-10">
-        <div class="text-6xl font-bold bg-gradient-to-l from-amber-200 via-amber-300 to-green-700 text-transparent bg-clip-text leading-24">
+        <div class="text-5xl font-bold bg-gradient-to-l from-amber-200 via-amber  -300 to-green-700 text-transparent bg-clip-text leading-22">
           رویش مارکت
         </div>
-        <div class="text-white tracking-[13px] font-thin text-xl -mt-2.5 opacity-45">
+        <div class="text-white tracking-[12px] font-thin text-xl -mt-2.5 opacity-45">
           rooyesh market
         </div>
       </div>
   
       <!-- متن راهنما -->
-      <div class="w-full text-[#FFFFFF] text-lg mt-8 text-right pr-6 z-10">
+      <div class="w-full text-[#FFFFFF] text-lg mt-8 text-right ">
         :شماره‌ی خود را وارد کنید
       </div>
   
       <!-- فیلد ورودی -->
-      <div class="mt-2 w-full max-w-sm md:max-w-md lg:max-w-lg z-10">
+      <div class=" relative top-4 w-70 ">
         <input v-model="phone" type="text" placeholder="۰۹۱۳ *** ۶۱۴"
           class="w-full py-2 h-14 text-white bg-transparent border border-gray-400 rounded-xl text-center placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-500">
       </div>

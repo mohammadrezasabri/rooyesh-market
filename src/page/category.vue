@@ -1,5 +1,10 @@
 <script setup>
 import Nav from '../components/nav.vue';
+import { useRouter } from 'vue-router';
+const router = useRouter()
+const goback = ()=>{
+  router.push('/home')
+}
 </script>
 
 
@@ -40,7 +45,7 @@ import Nav from '../components/nav.vue';
     
         <!-- دکمه برگشت -->
         <div class="mt-22 text-[#FF6600] ">
-            <button class=" py-1.5 px-20 font-bold rounded-2xl text-xl bg-[#22FF00]/10 ">
+            <button @click="goback" class=" py-1.5 px-20 font-bold rounded-2xl text-xl bg-[#22FF00]/10 ">
                 <span>برگشت</span>
             </button>
         </div>

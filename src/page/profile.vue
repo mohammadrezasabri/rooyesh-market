@@ -5,10 +5,12 @@ import { useRouter } from 'vue-router';
 const router = useRouter()
 
 const goback = ()=>{
-  router.push('/')
+  router.push('/home')
 }
 
-
+const logout = ()=>{
+  router.push('/login')
+}
 </script>
 
 
@@ -52,7 +54,7 @@ const goback = ()=>{
         کد های تخفیف
       </button>
 
-      <button class="w-full max-w-sm h-10 border border-[#FFFFFF33] rounded-xl text-[#FF6600] font-bold">
+      <button @click="logout" class="w-full max-w-sm h-10 border border-[#FFFFFF33] rounded-xl text-[#FF6600] font-bold">
         خروج از حساب کاربری
       </button>
     </div>
