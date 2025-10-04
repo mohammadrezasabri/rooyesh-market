@@ -36,13 +36,11 @@ const gotohome = () => {
     <div class="relative -top-1 lg:-top-4 w-11/12 max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl mt-4 sm:mt-6 lg:mt-8 flex items-center justify-between text-white">
       <!-- تصویر پروفایل -->
 
-      <div   class=" rounded-sm cursor-pointer" >
-        <img  src="../assets/img/Vector.png" alt="menu" class="w-7 h-7 sm:w-10 sm:h-10 ">
-      </div>
+      
       <!-- عنوان فروشگاه -->
-      <div class="text-center flex-1 -ml-6 sm:-ml-8 md:-ml-10">
-        <h1 @click="gotohome"  class="text-orange-400 text-2xl font-bold">رویـش مارکت</h1>
-        <p class="text-white tracking-[1px] sm:tracking-[2px] font-thin text-xs sm:text-sm opacity-45 ">royesh markat</p>
+      <div class="  flex-1 items-center justify-center ">
+        <h1 @click="gotohome"  class="text-orange-400 text-2xl font-bold text-center ">رویـش مارکت</h1>
+        <p class="text-white tracking-[1px] sm:tracking-[2px] font-thin text-xs sm:text-sm opacity-45 text-center">royesh markat</p>
       </div>
 
       <!-- آیکن منو -->
@@ -51,23 +49,7 @@ const gotohome = () => {
         <img src="../assets/img/۲۰۲۴۰۵۲۷_۰۱۲۵۴۰ 1.png" alt="profile" class="w-full h-full object-cover">
       </div>
     </div>
-
-    <!-- نوار جستجو -->
-    <!-- کادر جستجو زیر هدر -->
-    <div class="w-11/12 max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl mt-4 sm:mt-6 relative -top-4 sm:-top-3 lg:-top-10">
-      <!-- 🔍 آیکن ذره‌بین -->
-      <span class="absolute inset-y-0 right-3 sm:right-4 flex items-center pointer-events-none">
-        <svg class="w-4 h-4 sm:w-5 sm:h-5 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round"
-            d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 104.5 4.5a7.5 7.5 0 0012.15 12.15z"></path>
-        </svg>
-      </span>
-
-      <!-- 🔤 کادر ورودی جستجو -->
-      <input type="text" placeholder="...محصول مورد نظر را جستجو کنید"
-        class="w-full bg-[#1E1E1E] text-white text-sm sm:text-base px-8 sm:px-10 py-2 sm:py-3 border border-gray-600 rounded-full h-10 sm:h-12 placeholder-gray-400 outline-none">
-    </div>
+    
     <div class="w-full relative -top-6 sm:-top-5 lg:-top-10">
       <img src="../assets/img/Untitled 1.png" alt="Hero banner" class="w-full  max-h-40 sm:max-h-40 md:max-h-48 object-contain ">
     </div>
@@ -75,7 +57,7 @@ const gotohome = () => {
     <!-- دسته‌ها و مشاهده همه -->
     <div class="w-11/12 max-w-md  flex flex-row-reverse items-center justify-between relative -top-10 sm:-top-6 lg:-top-13">
       <!-- دسته‌ها (راست) -->
-      <div class="text-orange-500 font-bold text-lg">دسته ها</div>
+      
 
       <!-- مشاهده همه (چپ) -->
       <div class="flex items-center text-green-400 text-sm cursor-pointer">
@@ -84,7 +66,7 @@ const gotohome = () => {
       </div>
     </div>
 
-    <div class="relative -top-12 lg:-top-16  grid grid-cols-4  gap-2">
+    <div class="relative -top-12 lg:-top-16  grid grid-cols-4  gap-2 ">
       <div class="w-18 sm:w-20 h-20 sm:h-22 bg-[#1E1E1E] rounded-xl flex flex-col items-center justify-center text-white text-sm">
         <img src="../assets/img/rb_12580.png" alt="">
         <span class="relative sm:-top-2">دسر</span>
