@@ -11,6 +11,10 @@ const goback = ()=>{
 const logout = ()=>{
   router.push('/login')
 }
+
+const goChangePassword = ()=>{
+  router.push('/change-password')
+}
 </script>
 
 
@@ -46,13 +50,11 @@ const logout = ()=>{
         سفارش ها
       </button>
 
-      <button class="w-full max-w-sm h-10 border border-[#FFFFFF33] rounded-xl text-[#FF6600] font-bold">
+      <button @click="goChangePassword" class="w-full max-w-sm h-10 border border-[#FFFFFF33] rounded-xl text-[#FF6600] font-bold">
         تغییر رمز عبور
       </button>
 
-      <button class="w-full max-w-sm h-10 border border-[#FFFFFF33] rounded-xl text-[#FF6600] font-bold">
-        کد های تخفیف
-      </button>
+     
 
       <button @click="logout" class="w-full max-w-sm h-10 border border-[#FFFFFF33] rounded-xl text-[#FF6600] font-bold">
         خروج از حساب کاربری

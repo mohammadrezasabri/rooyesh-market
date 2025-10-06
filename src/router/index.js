@@ -4,6 +4,7 @@ import login  from '../page/login.vue'
 import home from '../page/home.vue'
 import profile from '../page/profile.vue' 
 import product from '../page/product.vue'
+import changePassword from '../page/change-password.vue'
 
 
 const routes = [
@@ -11,8 +12,8 @@ const routes = [
   { path: '/login', component: login},
   { path: '/home', component: home},
   { path: '/profile', component: profile},
-
   { path: '/product', component: product},
+  { path: '/change-password', component: changePassword},
 ]
 
 const router = createRouter({

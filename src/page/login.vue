@@ -3,20 +3,25 @@ import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import Cookies from 'js-cookie';
 
-const phone = ref('')
+const username = ref('')
+const password = ref('')
 const router = useRouter()
 
-const checklogin=()=>{
-  if(phone.value.trim()=== ''){
-    alert('لطفاً شماره تلفن خود را وارد کنید')
+const checklogin = () => {
+  if (username.value.trim() === '') {
+    alert('لطفاً نام کاربری را وارد کنید')
+    return
+  }
+  if (password.value.trim() === '') {
+    alert('لطفاً رمز عبور را وارد کنید')
     return
   }
 
-  Cookies.set('rooyesh-market', phone.value,{expires: 7})
-  alert('با موفقیت ثبت نام شدید')
+  // در این نمونهٔ ساده، فقط نام کاربری را ذخیره می‌کنیم
+  Cookies.set('rooyesh-user', username.value, { expires: 7 })
+  alert('با موفقیت وارد شدید')
 
-router.push('/home')
-  
+  router.push('/home')
 }
 
 
@@ -47,19 +52,21 @@ router.push('/home')
   
       <!-- متن راهنما -->
       <div class="w-full text-[#FFFFFF] text-lg mt-8 text-right ">
-        :شماره‌ی خود را وارد کنید
+        :اطلاعات ورود خود را وارد کنید
       </div>
-  
-      <!-- فیلد ورودی -->
-      <div class=" relative top-4 w-70 ">
-        <input v-model="phone" type="text" placeholder="۰۹۱۳ *** ۶۱۴"
+
+      <!-- فیلدهای ورودی -->
+      <div class=" relative top-4 w-70 space-y-4 ">
+        <input v-model="username" type="text" placeholder="نام کاربری"
+          class="w-full py-2 h-14 text-white bg-transparent border border-gray-400 rounded-xl text-center placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-500">
+        <input v-model="password" type="password" placeholder="رمز عبور"
           class="w-full py-2 h-14 text-white bg-transparent border border-gray-400 rounded-xl text-center placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-500">
       </div>
   
       <!-- دکمه -->
       <div class="absolute bottom-14 w-full max-w-sm text-amber-700 text-4xl z-10">
         <button @click="checklogin" class="w-full min-h-14 scroll-py-4  bg-[#22FF00]/10 font-bold rounded-2xl opacity-60">
-          <span class="align-super">بـــزن بــریـم</span>
+          <span class="align-super">ورود</span>
         </button>
       </div>
   
