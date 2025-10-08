@@ -10,9 +10,15 @@ import changePassword from '../page/change-password.vue'
 const routes = [
   { path: '/', redirect: '/login'},
   { path: '/login', component: login},
-  { path: '/home', component: home},
-  { path: '/profile', component: profile},
-  { path: '/product', component: product},
+  { path: '/home',
+    name:'home',
+    component: home},
+  { path: '/profile',
+    name: 'profile',
+    component: profile},
+  { path: '/product',
+    name:'product',
+    component: product},
   { path: '/change-password', component: changePassword},
 ]
 
