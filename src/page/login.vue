@@ -24,6 +24,10 @@ const checklogin = () => {
   router.push('/home')
 }
 
+const goToSignup = () => {
+  router.push('/signup')
+}
+
 
 
 
@@ -63,10 +67,14 @@ const checklogin = () => {
           class="w-full py-2 h-14 text-white bg-transparent border border-gray-400 rounded-xl text-center placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-500">
       </div>
   
-      <!-- دکمه -->
-      <div class="absolute bottom-14 w-full max-w-sm text-amber-700 text-4xl z-10">
+      <!-- دکمه‌ها -->
+      <div class="absolute bottom-14 w-full max-w-sm text-amber-700 text-4xl z-10 space-y-4">
         <button @click="checklogin" class="w-full min-h-14 scroll-py-4  bg-[#22FF00]/10 font-bold rounded-2xl opacity-60">
           <span class="align-super">ورود</span>
+        </button>
+        
+        <button @click="goToSignup" class="w-full min-h-12 text-white text-lg bg-transparent border border-gray-400 rounded-xl hover:bg-gray-800/20 transition-colors">
+          <span>ساخت حساب کاربری جدید</span>
         </button>
       </div>
   

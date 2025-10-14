@@ -1,6 +1,7 @@
 import { createWebHistory, createRouter } from 'vue-router'
 
 import login  from '../page/login.vue'
+import signup from '../page/signup.vue'
 import home from '../page/home.vue'
 import profile from '../page/profile.vue' 
 import product from '../page/product.vue'
@@ -10,6 +11,7 @@ import changePassword from '../page/change-password.vue'
 const routes = [
   { path: '/', redirect: '/login'},
   { path: '/login', component: login},
+  { path: '/signup', component: signup},
   { path: '/home',
     name:'home',
     component: home},
