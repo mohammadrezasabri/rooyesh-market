@@ -1,32 +1,62 @@
 <script setup>
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
+import { auth } from '../lib/supabase.js';
 
 const router = useRouter()
 const currentPassword = ref('')
 const newPassword = ref('')
 const confirmPassword = ref('')
+const loading = ref(false)
+const errorMessage = ref('')
+const successMessage = ref('')
 
-const submitChange = () => {
+const submitChange = async () => {
+  // پاک کردن پیام‌های قبلی
+  errorMessage.value = ''
+  successMessage.value = ''
+  
+  // اعتبارسنجی فیلدها
   if (currentPassword.value.trim() === '') {
-    alert('لطفاً رمز عبور فعلی را وارد کنید')
+    errorMessage.value = 'لطفاً رمز عبور فعلی را وارد کنید'
     return
   }
   if (newPassword.value.trim() === '') {
-    alert('لطفاً رمز عبور جدید را وارد کنید')
+    errorMessage.value = 'لطفاً رمز عبور جدید را وارد کنید'
     return
   }
   if (confirmPassword.value.trim() === '') {
-    alert('لطفاً تکرار رمز عبور جدید را وارد کنید')
+    errorMessage.value = 'لطفاً تکرار رمز عبور جدید را وارد کنید'
     return
   }
   if (newPassword.value !== confirmPassword.value) {
-    alert('رمز عبور جدید و تکرار آن یکسان نیستند')
+    errorMessage.value = 'رمز عبور جدید و تکرار آن یکسان نیستند'
+    return
+  }
+  if (newPassword.value.length < 6) {
+    errorMessage.value = 'رمز عبور جدید باید حداقل 6 کاراکتر باشد'
     return
   }
 
-  alert('رمز عبور با موفقیت تغییر کرد')
-  router.push('/profile')
+  loading.value = true
+
+  try {
+    const { data, error } = await auth.updatePassword(newPassword.value)
+
+    if (error) {
+      errorMessage.value = error.message
+    } else {
+      successMessage.value = 'رمز عبور با موفقیت تغییر کرد'
+      setTimeout(() => {
+        router.push('/profile')
+      }, 2000)
+    }
+  } catch (error) {
+    errorMessage.value = 'خطا در تغییر رمز عبور'
+    console.error('Password change error:', error)
+  } finally {
+    loading.value = false
+  }
 }
 
 const goBack = () => {
@@ -54,6 +84,16 @@ const goBack = () => {
 
     <!-- فرم تغییر رمز -->
     <div class="w-11/12 max-w-sm mt-6 z-10">
+      <!-- نمایش خطا -->
+      <div v-if="errorMessage" class="w-full text-red-400 text-sm text-center mb-4">
+        {{ errorMessage }}
+      </div>
+
+      <!-- نمایش موفقیت -->
+      <div v-if="successMessage" class="w-full text-green-400 text-sm text-center mb-4">
+        {{ successMessage }}
+      </div>
+
       <div class="space-y-4">
         <input v-model="currentPassword" type="password" placeholder="رمز عبور فعلی"
           class="w-full py-2 h-14 text-white bg-transparent border border-gray-400 rounded-xl text-center placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-500">
@@ -64,8 +104,9 @@ const goBack = () => {
       </div>
 
       <div class="mt-6 text-amber-700 text-2xl">
-        <button @click="submitChange" class="w-full min-h-12 bg-[#22FF00]/10 font-bold rounded-2xl opacity-60">
-          تایید
+        <button @click="submitChange" :disabled="loading" 
+          class="w-full min-h-12 bg-[#22FF00]/10 font-bold rounded-2xl opacity-60 disabled:opacity-30">
+          {{ loading ? 'در حال تغییر...' : 'تایید' }}
         </button>
       </div>
 

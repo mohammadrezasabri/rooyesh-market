@@ -1,16 +1,30 @@
 <script setup>
 import Nav from '../components/nav.vue';
 import { useRouter } from 'vue-router';
+import { useAuthStore } from '../stores/auth';
 
 const router = useRouter()
+const authStore = useAuthStore()
 
 const goback = ()=>{
   router.push('/home')
 }
 
-const logout = ()=>{
-  router.push('/login')
+const logout = async () => {
+
+  const{success , error} = await authStore.signOut()
+  
+  if (success){
+    router.push('/login')
+  }else{
+    console.error('خطا در خروج',error)
+  }
+
 }
+
+  
+  
+
 
 const goChangePassword = ()=>{
   router.push('/change-password')

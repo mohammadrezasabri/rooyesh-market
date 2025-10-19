@@ -1,32 +1,48 @@
 <script setup> 
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
-import Cookies from 'js-cookie';
+import { auth } from '../lib/supabase.js';
 
-const username = ref('')
+const email = ref('')
 const password = ref('')
+const loading = ref(false)
+const errorMessage = ref('')
 const router = useRouter()
 
-const checklogin = () => {
-  if (username.value.trim() === '') {
-    alert('لطفاً نام کاربری را وارد کنید')
+const checklogin = async () => {
+  // پاک کردن خطاهای قبلی
+  errorMessage.value = ''
+  
+  // اعتبارسنجی فیلدها
+  if (email.value.trim() === '') {
+    errorMessage.value = 'لطفاً ایمیل را وارد کنید'
     return
   }
   if (password.value.trim() === '') {
-    alert('لطفاً رمز عبور را وارد کنید')
+    errorMessage.value = 'لطفاً رمز عبور را وارد کنید'
     return
   }
 
-  // در این نمونهٔ ساده، فقط نام کاربری را ذخیره می‌کنیم
-  Cookies.set('rooyesh-user', username.value, { expires: 7 })
-  alert('با موفقیت وارد شدید')
+  loading.value = true
 
-  router.push('/home')
+  try {
+    const { data, error } = await auth.signIn(email.value, password.value)
+
+    if (error) {
+      errorMessage.value = error.message
+    } else {
+      alert('با موفقیت وارد شدید')
+      router.push('/home')
+    }
+  } catch (error) {
+    errorMessage.value = 'خطا در ورود'
+    console.error('Login error:', error)
+  } finally {
+    loading.value = false
+  }
 }
 
-const goToSignup = () => {
-  router.push('/signup')
-}
+
 
 
 
@@ -59,9 +75,14 @@ const goToSignup = () => {
         :اطلاعات ورود خود را وارد کنید
       </div>
 
+      <!-- نمایش خطا -->
+      <div v-if="errorMessage" class="w-full text-red-400 text-sm text-center mb-4">
+        {{ errorMessage }}
+      </div>
+
       <!-- فیلدهای ورودی -->
       <div class=" relative top-4 w-70 space-y-4 ">
-        <input v-model="username" type="text" placeholder="نام کاربری"
+        <input v-model="email" type="email" placeholder="ایمیل"
           class="w-full py-2 h-14 text-white bg-transparent border border-gray-400 rounded-xl text-center placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-500">
         <input v-model="password" type="password" placeholder="رمز عبور"
           class="w-full py-2 h-14 text-white bg-transparent border border-gray-400 rounded-xl text-center placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-500">
@@ -69,13 +90,11 @@ const goToSignup = () => {
   
       <!-- دکمه‌ها -->
       <div class="absolute bottom-14 w-full max-w-sm text-amber-700 text-4xl z-10 space-y-4">
-        <button @click="checklogin" class="w-full min-h-14 scroll-py-4  bg-[#22FF00]/10 font-bold rounded-2xl opacity-60">
-          <span class="align-super">ورود</span>
+        <button @click="checklogin" :disabled="loading" 
+          class="w-full min-h-14 scroll-py-4 bg-[#22FF00]/10 font-bold rounded-2xl opacity-60 disabled:opacity-30">
+          <span class="align-super">{{ loading ? 'در حال ورود...' : 'ورود' }}</span>
         </button>
         
-        <button @click="goToSignup" class="w-full min-h-12 text-white text-lg bg-transparent border border-gray-400 rounded-xl hover:bg-gray-800/20 transition-colors">
-          <span>ساخت حساب کاربری جدید</span>
-        </button>
       </div>
   
     </div>
