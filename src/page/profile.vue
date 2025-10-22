@@ -10,6 +10,11 @@ const goback = ()=>{
   router.push('/home')
 }
 
+
+const goOrders = () =>{
+  router.push('/orders')
+}
+
 const logout = async () => {
 
   const{success , error} = await authStore.signOut()
@@ -60,7 +65,7 @@ const goChangePassword = ()=>{
 
     <!-- دکمه‌ها -->
     <div class="flex flex-col items-center space-y-4 w-11/12 max-w-md mt-6">
-      <button class="w-full max-w-sm h-10 border border-[#FFFFFF33] rounded-xl text-[#FF6600] font-bold">
+      <button @click="goOrders" class="w-full max-w-sm h-10 border border-[#FFFFFF33] rounded-xl text-[#FF6600] font-bold">
         سفارش ها
       </button>
 

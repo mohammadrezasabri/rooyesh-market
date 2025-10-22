@@ -71,7 +71,7 @@ const checklogin = async () => {
       </div>
   
       <!-- متن راهنما -->
-      <div class="w-full text-[#FFFFFF] text-lg mt-8 text-right ">
+      <div class="w-full  text-[#FFFFFF] text-lg mt-8 text-center ">
         :اطلاعات ورود خود را وارد کنید
       </div>
 
@@ -91,7 +91,7 @@ const checklogin = async () => {
       <!-- دکمه‌ها -->
       <div class="absolute bottom-14 w-full max-w-sm text-amber-700 text-4xl z-10 space-y-4">
         <button @click="checklogin" :disabled="loading" 
-          class="w-full min-h-14 scroll-py-4 bg-[#22FF00]/10 font-bold rounded-2xl opacity-60 disabled:opacity-30">
+          class="w-full min-h-14 scroll-py-4 bg-[#22FF00]/10 font-bold rounded-2xl border border-amber-50 opacity-60  disabled:opacity-30">
           <span class="align-super">{{ loading ? 'در حال ورود...' : 'ورود' }}</span>
         </button>
         
