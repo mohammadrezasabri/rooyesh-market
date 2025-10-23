@@ -13,15 +13,21 @@ const gotohome = () => {
   router.push("/home");
 };
 
+const gotoorders = () =>{
+  router.push('/orders')
+}
+
 // Import icon assets
 import profileActive from "../assets/img/image.png";
 import profileInactive from "../assets/img/image 5.png";
 import homeActive from "../assets/img/image home.png";
 import homeInactive from "../assets/img/image 3.png";
+import ordersInactive from "../assets/img/image 7.png";
 
 // Computed properties for active states
 const isProfileActive = computed(() => route.path === "/profile");
 const isHomeActive = computed(() => route.path === "/home");
+const isOrdersActive = computed(() => route.path === "/orders")
 
 </script>
 
@@ -37,9 +43,9 @@ const isHomeActive = computed(() => route.path === "/home");
       />
     </div>
 
-    <div class="flex items-center justify-center">
+    <div @click="gotoorders" class="flex items-center justify-center">
       <img
-        src="../assets/img/image 7.png"
+        :src="isOrdersActive ? ordersActive : ordersInactive"
         class="w-8 sm:w-10 h-8 sm:h-10"
         alt=""
       />

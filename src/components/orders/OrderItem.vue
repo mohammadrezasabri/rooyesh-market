@@ -18,7 +18,7 @@ defineProps({
         class="w-16 h-16 rounded-xl object-cover border border-gray-200"
       />
       <div>
-        <h2 class="font-semibold text-gray-800 text-lg">{{ order.name }}</h2>
+        <h2 class="font-semibold text-white text-lg">{{ order.name }}</h2>
         <p class="text-gray-500 text-sm">{{ order.date }}</p>
         
       </div>

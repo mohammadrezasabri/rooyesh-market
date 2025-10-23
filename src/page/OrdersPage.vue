@@ -3,6 +3,8 @@ import { ref } from 'vue'
 import OrderList from '../components/orders/OrderList.vue'
 import OrdersHeader from '../components/orders/OrdersHeader.vue'
 import Nav from '../components/nav.vue'
+import mazmaz from '../assets/img/57cdffa416a872dbaa4ac09c328deae7dec40e01.png'
+import pofak from '../assets/img/rb_11570.png'
 
 
 const orders = ref([
@@ -10,7 +12,7 @@ const orders = ref([
     id: 1,
     name: 'چیپس مزمز',
     price: 35000,
-    image: '/img/products/chips.jpg',
+    image: mazmaz,
     date: '1403/07/30',
 
   },
@@ -18,7 +20,7 @@ const orders = ref([
     id: 2,
     name: 'پفک نمکی چی توز',
     price: 28000,
-    image: '/img/products/pofak.jpg',
+    image: pofak,
     date: '1403/08/01',
  
   },
@@ -26,7 +28,7 @@ const orders = ref([
     id: 3,
     name: 'نوشابه کوکاکولا ۱ لیتری',
     price: 20000,
-    image: '/img/products/cocacola.jpg',
+    image: './assets//cocacola.jpg',
     date: '1403/08/02',
  
   },
