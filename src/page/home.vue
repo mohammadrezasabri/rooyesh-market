@@ -8,11 +8,11 @@ import deser from "../assets/img/57cdffa416a872dbaa4ac09c328deae7dec40e01.png"
 
 const categories = [
   { name: "دسر", img: deser },
-  { name: "کیک", img: "../assets/img/rb_2150731924.png" },
-  { name: "میان وعده", img: "../assets/img/rb_2151261349.png" },
-  { name: "چیپس", img: "../assets/img/rb_11570.png" },
-  { name: "بستنی", img: "../assets/img/rb_12580.png" },
-  { name: "کافه", img: "../assets/img/rb_2149108540.png" },
+  { name: "کیک", img: deser },
+  { name: "میان وعده", img: deser },
+  { name: "چیپس", img: deser },
+  { name: "بستنی", img: deser },
+  { name: "کافه", img: deser },
 ];
 
 
@@ -55,7 +55,7 @@ const gotohome = () => {
       <!-- عنوان فروشگاه -->
       <div class="  flex-1 items-center justify-center ">
         <h1 @click="gotohome"  class="text-orange-400 text-2xl font-bold text-center ">رویـش مارکت</h1>
-        <p class="text-white tracking-[1px] sm:tracking-[2px] font-thin text-xs sm:text-sm opacity-45 text-center">royesh markat</p>
+        <p class="text-white tracking-[3px] sm:tracking-[2px] font-thin text-xs sm:text-sm opacity-45 text-center">rooyesh market</p>
       </div>
 
       <!-- آیکن منو -->
@@ -66,7 +66,45 @@ const gotohome = () => {
     </div>
     
     <div class="w-full relative -top-6 sm:-top-5 lg:-top-10">
-      <img src="../assets/img/Untitled 1.png" alt="Hero banner" class="w-full  max-h-40 sm:max-h-40 md:max-h-48 object-contain ">
+      <!-- جایگزینِ کل بلوک <img ...> قبلی شود -->
+<div class="w-full relative -top-1 sm:-top-5 lg:-top-10">
+  <div
+    dir="rtl"
+    class="mx-auto w-11/12 max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl h-40 md:h-48
+           rounded-[28px] md:rounded-[36px] overflow-hidden relative shadow-2xl"
+  >
+    
+   
+
+    <!-- هاله‌های رنگی نرم (match با بک‌گراند اصلی) -->
+    <div class="pointer-events-none absolute -left-12 -bottom-10 w-36 h-36 sm:w-40 sm:h-40 rounded-full bg-[#22FF00]/30 blur-2xl"></div>
+    <div class="pointer-events-none absolute -right-12 -top-10 w-36 h-36 sm:w-40 sm:h-40 rounded-full bg-[#FF6600]/35 blur-2xl"></div>
+
+
+
+    <!-- محتوا -->
+    <div class="relative h-full flex flex-col items-center justify-center px-4 text-center select-none">
+      <h2
+        class="font-extrabold leading-tight tracking-tight
+               bg-gradient-to-r from-emerald-200 via-rose-200 to-amber-200 bg-clip-text text-transparent
+               text-3xl md:text-4xl"
+               >
+        هایپر مارکت رویش
+      </h2>
+
+      <p
+        class="mt-1.5 md:mt-2 text-white/70 [text-transform:lowercase]
+               tracking-[0.22em] sm:tracking-[0.25em] text-[11px] sm:text-[13px]"
+      >
+        souper market rooyesh
+      </p>
+    </div>
+
+
+
+  </div>
+</div>
+
     </div>
 
     <!-- دسته‌ها و مشاهده همه -->
@@ -75,37 +113,36 @@ const gotohome = () => {
       
 
       <!-- مشاهده همه (وسط) -->
-      <div class="flex items-center text-green-400 text-2xl cursor-pointer ">
+      <div class="flex items-center relative -top-3 text-green-400 text-xl cursor-pointer ">
         <span class="">&lt;</span>
         <span>مشاهده همه</span>
       </div>
     </div>
 
     <!-- بخش دسته‌بندی محصولات در صفحه Home -->
-<div class="relative -top-12 lg:-top-16 grid grid-cols-3 gap-4 sm:gap-6">
+<div class="relative -top-18 lg:-top-16 grid grid-cols-3 gap-4 sm:gap-6">
   <!-- ردیف اول -->
   <div
     v-for="(item, index) in categories.slice(0, 3)"
     :key="index"
-    class="w-28 sm:w-28 h-24 sm:h-28 bg-[#1E1E1E] hover:bg-[#22c55e]/20 transition-colors duration-300 rounded-2xl flex flex-col items-center justify-center text-white text-sm shadow-md"
-  >
-    <img :src="item.img" alt="" class="w-15 h-15 mb-1 object-contain" />
-    <span class="relative sm:-top-1 font-medium">{{ item.name }}</span>
+    class="w-22 sm:w-28 h-22 sm:h-28 bg-[#1E1E1E] hover:bg-[#22c55e]/20 transition-colors duration-300 rounded-2xl flex flex-col items-center justify-center text-white text-sm shadow-md ">
+    <img :src="item.img" alt="" class="mt-2 w-15 h-15 mb-1 object-contain rounded-xl" />
+    <span class="relative -top-1 sm:-top-1 font-medium">{{ item.name }}</span>
   </div>
 
   <!-- ردیف دوم -->
   <div
     v-for="(item, index) in categories.slice(3, 6)"
     :key="'row2-' + index"
-    class="w-28 sm:w-28 h-24 sm:h-28 bg-[#1E1E1E] hover:bg-[#22c55e]/20 transition-colors duration-300 rounded-2xl flex flex-col items-center justify-center text-white text-sm shadow-md"
+    class="w-22 sm:w-28 h-22 sm:h-28 bg-[#1E1E1E] hover:bg-[#22c55e]/20 transition-colors duration-300 rounded-2xl flex flex-col items-center justify-center text-white text-sm shadow-md "
   >
-    <img :src="item.img" alt="" class="w-12 h-12 mb-1 object-contain" />
+    <img :src="item.img" alt="" class="mt-2 w-15 h-15 mb-1 object-contain rounded-xl" />
     <span class="relative sm:-top-1 font-medium">{{ item.name }}</span>
   </div>
 </div>
 
 
-    <div class="w-11/12 max-w-md flex flex-row-reverse items-center justify-between relative -top-16 lg:-top-19">
+    <div class="w-11/12 max-w-md flex flex-row-reverse items-center justify-between relative -top-22 lg:-top-19">
       <!-- دسته‌ها (راست) -->
       <div class="text-orange-500 font-bold text-lg">محصولات پیشنهادی</div>
 
@@ -116,7 +153,7 @@ const gotohome = () => {
       </div>
     </div>
 
-    <div class="w-full max-w-md mx-auto px-4 relative -top-18 lg:-top-22">
+    <div class="w-full max-w-md mx-auto px-4 relative -top-23  lg:-top-22">
   <div class="flex items-start gap-4 overflow-x-auto">
 
     <!-- تیتر -->
@@ -126,7 +163,7 @@ const gotohome = () => {
     </div>
 
     <!-- لیست محصولات اسکرول‌پذیر -->
-    <div class="flex gap-3  scrollbar-none -mx-2 " style="-webkit-overflow-scrolling: touch; direction: rtl;">
+    <div class="flex gap-3  scrollbar-none -mx-2 p-2" style="-webkit-overflow-scrolling: touch; direction: rtl;">
 
       <!-- آیتم محصول 1 -->
       <div class="w-28 min-w-[7rem] bg-[#1E1E1E] p-2 rounded-xl flex-shrink-0">

@@ -2,6 +2,8 @@
 import Nav from '../components/nav.vue';
 import { useRouter } from 'vue-router';
 import { useAuthStore } from '../stores/auth';
+import UiButton from '../ui/Button.vue'
+
 
 const router = useRouter()
 const authStore = useAuthStore()
@@ -39,53 +41,50 @@ const goChangePassword = ()=>{
 
 <template>
 
-<div class="h-full w-full max-w-md flex flex-col items-center justify-between bg-[#242424] relative">
+<div class="min-h-screen w-full flex flex-col items-center justify-between bg-[#242424] relative ">
 
     <!-- پس‌زمینه‌های رنگی -->
-    <div
-      class="absolute top-0 left-1/2 transform -translate-x-1/2 w-64 h-64 md:w-80 md:h-80 bg-[#FF6600] rounded-b-full rounded-l-full blur-3xl opacity-35 pointer-events-none">
-    </div>
-    <div
-      class="absolute top-1/2 -left-20 w-64 h-64 md:w-80 md:h-80 bg-[#22FF00] rounded-b-full rounded-r-full blur-3xl opacity-15 pointer-events-none">
-    </div>
-    <div
-      class="absolute bottom-0 right-0 w-64 h-64 md:w-80 md:h-80 bg-[#676767] rounded-l-full rounded-t-full blur-3xl opacity-35 pointer-events-none">
-    </div>
+    <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="absolute -top-16 left-36 -right-6 w-96 h-96 bg-[#FF6600] rounded-b-full rounded-l-full blur-3xl opacity-35"></div>
+        <div class="absolute top-80 -left-32 w-96 h-96 bg-[#22FF00] rounded-b-full rounded-r-full blur-3xl opacity-15"></div>
+        <div class="absolute -bottom-44 -right-44 w-96 h-96 bg-[#676767] rounded-l-full rounded-t-full blur-3xl opacity-35"></div>
+      </div>
 
     <!-- عکس کاربر -->
     <div class="mt-10 shrink-0">
-      <img src="../assets/img/Group 20.png" alt="" class="max-h-40 md:max-h-64 object-contain">
+      <img src="../assets/img/Group 20.png" alt="" class="max-h-60 md:max-h-64 object-contain">
     </div>
 
     <!-- اطلاعات کاربر -->
-    <div class="w-11/12 max-w-md mt-4 text-[#FFFFFF] font-bold text-xl text-center md:text-2xl space-y-1">
+    <div class="relative -top-10 text-[#FFFFFF] font-bold text-xl text-center md:text-2xl space-y-1">
       <p>سید محمد بنی لوحی</p>
-      <p class="text-sm md:text-base">نام کاربری: smb.gd</p>
+      <p dir="rtl" class="text-sm md:text-base">نام کاربری: smb.gd</p>
     </div>
 
     <!-- دکمه‌ها -->
-    <div class="flex flex-col items-center space-y-4 w-11/12 max-w-md mt-6">
-      <button @click="goOrders" class="w-full max-w-sm h-10 border border-[#FFFFFF33] rounded-xl text-[#FF6600] font-bold">
-        سفارش ها
-      </button>
+    <!-- گروه دکمه‌های وسط -->
+    <div class="relative -top-15 flex flex-col items-center space-y-4 w-11/12">
+  <UiButton variant="secondary" size="lg" block class="max-w-sm" @click="goOrders">
+    سفارش‌ها
+  </UiButton>
 
-      <button @click="goChangePassword" class="w-full max-w-sm h-10 border border-[#FFFFFF33] rounded-xl text-[#FF6600] font-bold">
-        تغییر رمز عبور
-      </button>
+  <UiButton variant="secondary" size="lg" block class="max-w-sm" @click="goChangePassword">
+    تغییر رمز عبور
+  </UiButton>
 
-     
+  <UiButton variant="primary" size="lg" block class="max-w-sm" @click="logout">
+    خروج از حساب کاربری
+  </UiButton>
+</div>
 
-      <button @click="logout" class="w-full max-w-sm h-10 border border-[#FFFFFF33] rounded-xl text-[#FF6600] font-bold">
-        خروج از حساب کاربری
-      </button>
-    </div>
+<div class="relative -top-20 shrink-0">
+  <UiButton variant="soft" size="lg" block class="max-w-sm" @click="goback">
+    برگشت
+  </UiButton>
+</div>
 
-    <!-- دکمه برگشت -->
-    <div class="w-11/12 max-w-md mt-6 shrink-0 text-[#FF6600]">
-      <button @click="goback" class="py-2 px-10 md:px-20 font-bold rounded-2xl text-lg md:text-xl bg-[#22FF00]/10">
-        <span >برگشت</span>
-      </button>
-    </div>
+
+
 
     <!-- نوار ناوبری -->
     <Nav/>
