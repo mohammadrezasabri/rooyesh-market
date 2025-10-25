@@ -3,6 +3,21 @@
 import Nav from '../components/nav.vue';
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
+
+import deser from "../assets/img/57cdffa416a872dbaa4ac09c328deae7dec40e01.png"
+
+const categories = [
+  { name: "دسر", img: deser },
+  { name: "کیک", img: "../assets/img/rb_2150731924.png" },
+  { name: "میان وعده", img: "../assets/img/rb_2151261349.png" },
+  { name: "چیپس", img: "../assets/img/rb_11570.png" },
+  { name: "بستنی", img: "../assets/img/rb_12580.png" },
+  { name: "کافه", img: "../assets/img/rb_2149108540.png" },
+];
+
+
+
+
 const router = useRouter()
 const gotoprofile = () => {
   router.push('/profile')
@@ -55,53 +70,42 @@ const gotohome = () => {
     </div>
 
     <!-- دسته‌ها و مشاهده همه -->
-    <div class="w-11/12 max-w-md  flex flex-row-reverse items-center justify-between relative -top-10 sm:-top-6 lg:-top-13">
+    <div class="w-11/12 max-w-md  flex justify-center items-center justify-between relative -top-10 sm:-top-6 lg:-top-13">
       <!-- دسته‌ها (راست) -->
       
 
-      <!-- مشاهده همه (چپ) -->
-      <div class="flex items-center text-green-400 text-sm cursor-pointer">
-        <span class="mr-1">&lt;</span>
+      <!-- مشاهده همه (وسط) -->
+      <div class="flex items-center text-green-400 text-2xl cursor-pointer ">
+        <span class="">&lt;</span>
         <span>مشاهده همه</span>
       </div>
     </div>
 
-    <div class="relative -top-12 lg:-top-16  grid grid-cols-4  gap-2 ">
-      <div class="w-18 sm:w-20 h-20 sm:h-22 bg-[#1E1E1E] rounded-xl flex flex-col items-center justify-center text-white text-sm">
-        <img src="../assets/img/rb_12580.png" alt="">
-        <span class="relative sm:-top-2">دسر</span>
-      </div>
-      <div class="w-18 sm:w-20 h-20 sm:h-22 bg-[#1E1E1E] rounded-xl flex flex-col items-center justify-center text-white text-sm">
-        <img src="../assets/img/rb_2150731924.png" alt="">
-        <span class="relative sm:-top-2">کیک</span>
-      </div>
-      <div class="w-18 sm:w-20 h-20 sm:h-22 bg-[#1E1E1E] rounded-xl flex flex-col items-center justify-center text-white text-sm">
-        <img src="../assets/img/rb_2151261349.png" alt="">
-        <span class="relative sm:-top-2">میان وعده</span>
-      </div>
-      <div class="w-18 sm:w-20 h-20 sm:h-22 bg-[#1E1E1E] rounded-xl flex flex-col items-center justify-center text-white text-sm">
-        <img src="../assets/img/rb_11570.png" alt=""> 
-        <span class="relative sm:-top-2"> چیپس</span>
-      </div>
-      <div class="w-18 sm:w-20 h-20 sm:h-22 bg-[#1E1E1E] rounded-xl flex flex-col items-center justify-center text-white text-sm">
-        <img src="../assets/img/rb_12580.png" alt="">
-        <span class="relative sm:-top-2"> دسر</span>
-      </div>
-      <div class="w-18 sm:w-20 h-20 sm:h-22 bg-[#1E1E1E] rounded-xl flex flex-col items-center justify-center text-white text-sm">
-        <img src="../assets/img/rb_2149108540.png" alt="">
-        <span class="relative sm:-top-2"> کافه</span>
-      </div>
-      <div class="w-18 sm:w-20 h-20 sm:h-22 bg-[#1E1E1E] rounded-xl flex flex-col items-center justify-center text-white text-sm">
-        <img src="../assets/img/rb_12580.png" alt=""> 
-        <span class="relative sm:-top-2"> بستنی</span>
-      </div>
-      <div class="w-18 sm:w-20 h-20 sm:h-22 bg-[#1E1E1E] rounded-xl flex flex-col items-center justify-center text-white text-sm">
-        <img src="../assets/img/rb_2149108540.png" alt=""> 
-        <span class="relative sm:-top-2"> کافه</span>
-      </div>
-    </div>
+    <!-- بخش دسته‌بندی محصولات در صفحه Home -->
+<div class="relative -top-12 lg:-top-16 grid grid-cols-3 gap-4 sm:gap-6">
+  <!-- ردیف اول -->
+  <div
+    v-for="(item, index) in categories.slice(0, 3)"
+    :key="index"
+    class="w-28 sm:w-28 h-24 sm:h-28 bg-[#1E1E1E] hover:bg-[#22c55e]/20 transition-colors duration-300 rounded-2xl flex flex-col items-center justify-center text-white text-sm shadow-md"
+  >
+    <img :src="item.img" alt="" class="w-15 h-15 mb-1 object-contain" />
+    <span class="relative sm:-top-1 font-medium">{{ item.name }}</span>
+  </div>
 
-    <div class="w-11/12 max-w-md flex flex-row-reverse items-center justify-between relative -top-13 lg:-top-19">
+  <!-- ردیف دوم -->
+  <div
+    v-for="(item, index) in categories.slice(3, 6)"
+    :key="'row2-' + index"
+    class="w-28 sm:w-28 h-24 sm:h-28 bg-[#1E1E1E] hover:bg-[#22c55e]/20 transition-colors duration-300 rounded-2xl flex flex-col items-center justify-center text-white text-sm shadow-md"
+  >
+    <img :src="item.img" alt="" class="w-12 h-12 mb-1 object-contain" />
+    <span class="relative sm:-top-1 font-medium">{{ item.name }}</span>
+  </div>
+</div>
+
+
+    <div class="w-11/12 max-w-md flex flex-row-reverse items-center justify-between relative -top-16 lg:-top-19">
       <!-- دسته‌ها (راست) -->
       <div class="text-orange-500 font-bold text-lg">محصولات پیشنهادی</div>
 
