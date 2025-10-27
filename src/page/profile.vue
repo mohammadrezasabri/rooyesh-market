@@ -63,7 +63,7 @@ const goChangePassword = ()=>{
 
     <!-- دکمه‌ها -->
     <!-- گروه دکمه‌های وسط -->
-    <div class="relative -top-15 flex flex-col items-center space-y-4 w-11/12">
+    <div class="relative -top-22 flex flex-col items-center space-y-4 w-11/12">
   <UiButton variant="secondary" size="lg" block class="max-w-sm" @click="goOrders">
     سفارش‌ها
   </UiButton>
@@ -77,7 +77,7 @@ const goChangePassword = ()=>{
   </UiButton>
 </div>
 
-<div class="relative -top-20 shrink-0">
+<div class="relative -top-33 shrink-0">
   <UiButton variant="soft" size="lg" block class="max-w-sm" @click="goback">
     برگشت
   </UiButton>

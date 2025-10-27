@@ -26,7 +26,7 @@
     computed: {
       base() {
         return `
-          inline-flex items-center justify-center font-semibold rounded-2xl
+            inline-flex items-center justify-center font-semibold rounded-2xl
           transition-colors duration-300 select-none
           focus:outline-none focus:ring-2 focus:ring-emerald-400/40
           disabled:opacity-50 disabled:pointer-events-none
