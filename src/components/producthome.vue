@@ -1,9 +1,11 @@
 <script setup>
 import { onMounted, ref } from 'vue';
 import { supabase } from '../lib/supabase';
+import SkeletonLoader from './SkeletonLoader.vue';
 const products = ref([]);
 const loading = ref(true);
 const errorMsg = ref('');
+
 
 onMounted(async () => {
   try {
@@ -26,7 +28,7 @@ onMounted(async () => {
 
 
 <template>
-    <div v-if="loading" class="text-gray-400 text-center ">درحال بارگذاری...</div>
+    <SkeletonLoader v-if="loading" :count="6" />
       <div v-else-if="errorMsg" class="text-red-400 text-center">
         {{ errorMsg }}
       </div>

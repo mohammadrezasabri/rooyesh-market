@@ -6,7 +6,8 @@ import home from '../page/home.vue'
 import profile from '../page/profile.vue'
 import product from '../page/product.vue'
 import changePassword from '../page/change-password.vue'
-import orders from '../page/OrdersPage.vue' // ✅ اینو اضافه کن
+import orders from '../page/OrdersPage.vue' 
+import allproducts from '../page/AllProduct.vue'
 
 const routes = [
   { path: '/', redirect: '/login' },
@@ -39,6 +40,12 @@ const routes = [
     name: 'orders',
     component: orders,
     meta: { requiresAuth: true }    // چون فقط کاربر واردشده باید ببینه
+  },
+  { 
+    path: '/allproducts',
+    name: 'allproducts',
+    component: allproducts,
+    meta: { requiresAuth: true }
   },
 ]
 
